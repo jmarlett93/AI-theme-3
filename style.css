@@ -1049,6 +1049,7 @@ figure.blur.hide {
 	color: inherit; }
 	
 #exploreList li:hover {
+	/*hungadunga*/
 	transition: all 0.5s ease;
 	background-color: #455478;
 	border-radius: 2px;
