@@ -1120,17 +1120,17 @@ margin-left: 230px; }
 .category-result .date {
 	position: absolute;
 	bottom: 10%;
-	left: -20px;
+	left: -5px;
 	width: auto;
 	font-size: 22px;
 	font-weight: 500;
 	color: #FFF;
 	text-transform: uppercase;
 	font-style: italic;
-	-webkit-transform-origin: 0 50%;
-    -moz-transform-origin:    0 50%;
-    -ms-transform-origin:     0 50%;
-    -o-transform-origin:      0 50%;
+	-webkit-transform-origin: bottom left;
+    -moz-transform-origin:    bottom left;
+    -ms-transform-origin:     bottom left;
+    -o-transform-origin:      bottom left;
     
     -webkit-transform: rotate(-90deg); 
     -moz-transform:    rotate(-90deg); 
