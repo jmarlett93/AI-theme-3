@@ -1,11 +1,10 @@
 <?php 
-
 $isPipe = $_GET['ajaxpipe'];
 if($isPipe):
 header('Content-Type: application/json');
-endif;
+endif;  ?>
 
-
+<?php
 $post_hero;
 ob_start();
 get_template_part('hero');
@@ -16,8 +15,9 @@ $side_nav;
 ob_start();
 get_template_part('sideNav');
 $side_nav = ob_get_contents();
-ob_end_clean();
+ob_end_clean(); ?>
 
+<?php
 //create media query
 
 $queried_object = get_queried_object(); 
@@ -39,18 +39,16 @@ $args = array(
 	'post_mime_type'   => '',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true 
-);
+	'suppress_filters' => true  );  ?>
 
-//make array of media posts
+<?php //make array of media posts
 
 $posts_array = get_posts( $args );
 
 $previewposts = query_posts(array(
 	'showposts' => 14,
 	'orderby' => 'rand',
-	'category_name' => $cat->name
-));
+	'category_name' => $cat->name ));
 
 $field = get_field('hero_image', $taxonomy . '_' . $term_id);
 $hero_image = $field['url'];
@@ -87,9 +85,9 @@ foreach($posts_array as $post): setup_postdata($post);
 	$fieldv = get_field('video_media_cover');
 	$t = '<div class="masonry-item'; /*if($mtype != "image") { $t .= ' w2"'; }*/ $t .= ' data-masonry-ratio="' . $ratio . '"><a href="' . get_permalink() . '"><img class="preview" src="'; if($mtype == "image") { $t .= $fieldi['url']; } else { $t .= $fieldv['url']; } $t .='" /></a></div>';
 	$grid_html .= $t;
-endforeach; wp_reset_postdata();
+endforeach; wp_reset_postdata(); ?>
 
-$main = <<<AI_CATEGORYANIMATES_MAIN
+<?php $main = <<<AI_CATEGORYANIMATES_MAIN
 
 
 <style type="text/css">
@@ -117,31 +115,31 @@ $main = <<<AI_CATEGORYANIMATES_MAIN
             	<div class="col-two resultscontainer">
             		<style type="text/css">
 						.masonry-grid-sizer {
-							width: 30.33%; }
-
+							width: 30.33%;
+						}
 						.masonry-gutter-sizer {
-							width: 3%;	}
+							width: 3%; }
 							
 						.masonry-item {
 							min-height:20px;
 							width: 30.33%;
-							margin-bottom: 26px;	}
-						
+							margin-bottom: 26px; }
+	
 						.masonry-item.w2 {
 							height: 32px;
 							width: 63.66%; }
-							
+			
 						.masonry-item.w3 {
 							height: 54px;
 							width: 100%; }
-							
+						
 						.masonry-item img.preview {
 							border: 0px; }
 							
 						.masonry-item img.preview:hover {
-							transition: all 0.2s ease;
-							border: 4px solid #455478;
-							border-radius: 2px;  }
+							transition: all 0.2s fast;
+							border: solid 3px #455478;
+							border-radius: 2px; }
                 	</style>
 					
 					<div class="mediaBox"> 
@@ -168,8 +166,7 @@ $response = array(
 	"url" => get_category_link($cat->term_id),
 	"main" => $main,
 	"pageReady" => "ai.categoryMedia.init();ai.searchPage.setSearch();\$(window).resize();\$(\"#m-global-header\").addClass(\"backgroundTransparent\");",
-    "pageLeave" => "\$(\"#s\").off(\"keyup\");\$(\"footer\").removeClass(\"hidden\");\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");"
-	);
+    "pageLeave" => "\$(\"#s\").off(\"keyup\");\$(\"footer\").removeClass(\"hidden\");\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");" );
 	
 else:
 $singleResponse = $response;

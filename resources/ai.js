@@ -88,8 +88,7 @@ var ai = {
 			try { ain.controls["globalMenu"].exit(); } catch(e) { }
 		}
 		if(data.hasOwnProperty("mediaResult")) {
-			ai.deploy_Media.setContent(data, (isPopState ? true : false));
-		}
+			ai.deploy_Media.setContent(data, (isPopState ? true : false)); }
 	},
 	setLinks: function(){
 		$( "a[href^='http://'], a[href^='https://']" ).each(function() {
@@ -127,7 +126,7 @@ var ai = {
 			//success: function(data, textStatus, response){ ai.setContent(data, false, response); }
 		}).always(function(data){
 			if(data.hasOwnProperty("mediaResult") && !data.hasOwnProperty("main"))
-				History.replaceState(data, data["title"], data["url"]);
+				History.pushState(data, data["title"], data["url"]);
 			else
 				History.pushState(data, data["title"], data["url"]);
 		});
@@ -173,17 +172,16 @@ var ai = {
 					
 			if($(".mediacontainer").length > 0){
 				$(".mediacontainer").html(data['mediaResult']);
-				//History.replaceState(History.getState(), data['media_title'], data['media_url']);
+				History.pushState(History.getState(), data['media_title'], data['media_url']);
 				$(".mediacontainer").scrollTop(0);
 				ai.deploy_Media.isOpen = true;
 				ai.setLinks();
 			}else {
 				ai.deploy_Media.init(data, isPopState, (isPush !== false ? true : false));
 				$(".mediacontainer").html(data['mediaResult']);
-				//History.replaceState(History.getState(), data['media_title'], data['media_url']);
+				History.pushState(History.getState(), data['media_title'], data['media_url']);
 				$(".mediacontainer").scrollTop(0);
-				ai.setLinks();
-				}
+				ai.setLinks(); }
 		},
 		
 	},

@@ -53,8 +53,6 @@ $prevpost = get_previous_post(true);
 endwhile;
 
 $referrer = urlencode(($_GET['ref'] ? "?ref=" . $_GET['ref'] : $_SERVER['HTTP_REFERER']));
-
-//$social_share = get_template_part('socialBar');
 	
 $content = <<<AI_HEREDOC_SINGLEANIMATE_MAIN
 		    
