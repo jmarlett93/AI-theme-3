@@ -183,7 +183,6 @@ var ai = {
 				$(".mediacontainer").scrollTop(0);
 				ai.setLinks(); }
 		},
-		
 	},
 	
 	categoryMedia: {
