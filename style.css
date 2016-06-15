@@ -699,11 +699,6 @@ display: none; }
 	font-weight: 600;
 	text-decoration: none; }
 	
-.category-result .attr .date {
-	float: right;
-	font-size: 11px;
-	font-style: italic; }
-	
 .category-result .excerpt {
 	font-size: 11px; }
 

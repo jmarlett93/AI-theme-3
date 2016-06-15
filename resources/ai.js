@@ -63,8 +63,7 @@ var ai = {
 		var initState = History.getState();
 		History.replaceState({ title: ai.page.title, url: ai.page.url, main: $("main").html() }, ai.page.title, ai.page.url);
 		
-		eval(ai.page.ready);
-		
+		eval(ai.page.ready);	
 	},
 	setContent: function(data, isPopState) {
 		
@@ -165,8 +164,8 @@ var ai = {
 		
 		init: function(data, isPopState, isPush){
 			var insertMedia = '<div class="mediacontainer"><\/div>';
-			$(".mediaBox").prepend(insertMedia);
-		},
+			$(".mediaBox").prepend(insertMedia); 
+			},
 		
 		setContent: function(data, isPopState, isPush) {
 					
