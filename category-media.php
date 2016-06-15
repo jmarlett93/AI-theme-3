@@ -156,7 +156,7 @@ endforeach; wp_reset_postdata(); ?>
 
 AI_CATEGORYANIMATES_MAIN;
 
-/*global $response;*/
+global $response;
 
 $singleResponse = null;
 
