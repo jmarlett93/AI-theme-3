@@ -126,7 +126,7 @@ var ai = {
 			//success: function(data, textStatus, response){ ai.setContent(data, false, response); }
 		}).always(function(data){
 			if(data.hasOwnProperty("mediaResult") && !data.hasOwnProperty("main"))
-				History.pushState(data, data["title"], data["url"]);
+				History.pushState(data, data["media_title"], data["media_url"]);
 			else
 				History.pushState(data, data["title"], data["url"]);
 		});

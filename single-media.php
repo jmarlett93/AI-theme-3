@@ -47,12 +47,9 @@ else if (get_field('media_type') == 'video_embedded') {
 	$html_media = get_field('video_embedded_html');
 }
 
-$nextpost = get_next_post(true);
-$prevpost = get_previous_post(true);
-
 endwhile;
 
-$referrer = urlencode(($_GET['ref'] ? "?ref=" . $_GET['ref'] : $_SERVER['HTTP_REFERER']));
+//$referrer = urlencode(($_GET['ref'] ? "?ref=" . $_GET['ref'] : $_SERVER['HTTP_REFERER']));
 	
 $content = <<<AI_HEREDOC_SINGLEANIMATE_MAIN
 		    
@@ -72,7 +69,7 @@ $content = <<<AI_HEREDOC_SINGLEANIMATE_MAIN
                 <div class="item">
                 	<div class="icon" style="background-color:#3b5998;background-image:url('/images/facebook_icn.svg');"></div>
                     	<div class="count socialcount" data-source="facebook" data-url="$permalink"></div>Share</div></a>
-				<div>
+				</div>
         	
 AI_HEREDOC_SINGLEANIMATE_MAIN;
 
@@ -83,8 +80,7 @@ $response = array(
 	"media_url" => $permalink,
 	"main" => null,
 	"mediaResult" => $content,
-    "pageReady" => "\$(\"#m-global-header\").addClass(\"backgroundTransparent\");",
-	);
+    "pageReady" => "\$(\"#m-global-header\").addClass(\"backgroundTransparent\");", );
 
 if ( !$isPipe ):
 
