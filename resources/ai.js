@@ -183,6 +183,50 @@ var ai = {
 				ai.setLinks(); }
 		},
 	},
+	_modal: {
+		init: function (content) {
+			$("body").on('touchmove', function(e){e.preventDefault()});
+			$("body").addClass("stop-scrolling");
+			var insertContent = '<div id="mscover"><div id="mscontainer"><\/div><\/div>';
+			$("body").append(insertContent);
+			if(content) {
+				ai._modal.setContent(content);
+			}
+			ai._modal.isOpen = true;
+		},
+		setContent: function (content) {
+			if($("div#mscover").length > 0) {
+				$("#mscontainer").html(content);
+				ai._modal.setControls();
+				ai._modal.size();
+			}
+			else {
+				ai._modal.init(content);
+			}
+		},
+		setControls: function () {
+			$(".mscontrol").off("click");
+			$(".mscontrol").on("click", function(event){
+				event.preventDefault();
+				var action = $(this).attr("data-ms-control-action");
+				switch(action) {
+					case "exit":
+						ai._modal.exit();
+					break;
+				}
+			});
+		},
+		size: function () {
+			$("#mscontainer").css({ top: (($(window).height() - $("#mscontainer").height()) / 2) + "px" });
+		},
+		exit: function () {
+			$("body").off('touchmove');
+			$("body").removeClass("stop-scrolling");
+			$("#mscover").remove();
+			ai._modal.isOpen = false;
+		},
+		isOpen: false
+	},
 	
 	categoryMedia: {
 		init: function () {
