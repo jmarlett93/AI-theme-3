@@ -115,8 +115,8 @@ endforeach; wp_reset_postdata(); ?>
             	<div class="col-two resultscontainer">
             		<style type="text/css">
 						.masonry-grid-sizer {
-							width: 30.33%;
-						}
+							width: 30.33%; }
+							
 						.masonry-gutter-sizer {
 							width: 3%; }
 							
@@ -142,9 +142,7 @@ endforeach; wp_reset_postdata(); ?>
 							border-radius: 2px; }
                 	</style>
 					
-					<div class="mediaBox"> 
-						
-					</div>
+					<div class="mediaBox"></div>
 					
             		<div id="animates-grid-container">
                 		<div class="masonry-grid-sizer"></div><div class="masonry-gutter-sizer"></div>

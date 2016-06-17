@@ -354,8 +354,14 @@ $(document).scroll(function() {
 			$(this).css({
 				"position": "fixed",
 				"top": ($(this).height() - $($(this).attr("data-minHeight")).height())*-1 + "px" });
+				
 			if($(this).find("figure.blur").hasClass("hide")) { $(this).find("figure.blur").removeClass("hide"); }
-			$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").outerHeight() - $("#main").height())/2 + "px", "bottom": $("footer").outerHeight() + "px"});
+			
+			$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px"});
+			
+			if($(this).find("#footerLogoContainer")){
+				$(".side-nav").css({bottom : $("footer").outerHeight() + "px"}); 
+				}
 		}
 	});
 	  
