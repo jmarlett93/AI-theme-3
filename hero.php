@@ -44,9 +44,8 @@ if(is_home()):
 			$field = get_field('hero_image', $hero_posts[$heroi]->ID);
 			$herohtml .= '<div class="hero-' . $num . ' hero-item"><a class="inner" href="' . get_permalink($hero_posts[$heroi]->ID) . '"><figure style="background-image:url(' . $field['url'] . ')"></figure><div class="footer">' . get_the_title($hero_posts[$heroi]) . '</div></a></div>';
 			if($heroi == 0 || $heroi == 1 || $heroi == 3|| (count($hero_posts) == 1 && $heroi == 0) || (count($hero_posts) == 3 && $heroi == 2)): $herohtml .= '</div>'; endif;
-		endfor;
-		
-		?>
+		endfor; ?>
+        
     	<div id="m-global-main__filler"></div>
         
         <div id="m-index-main__branding" class="clearfix"> 
