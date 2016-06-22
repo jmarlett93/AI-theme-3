@@ -780,7 +780,6 @@ display: none; }
 #m-global-header__tagline a div {
 	position:relative;
 	display:flex;
-	height: 50%;
 	overflow: hidden;
 	border: 0px;
 	color:#fff;
