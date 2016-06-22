@@ -749,6 +749,7 @@ display: none; }
   	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
+	justify-content: flex-start;
 	align-items: center; }
 
 #m-global-header__logo {
@@ -790,6 +791,7 @@ display: none; }
 #m-global-header__nav {
 	width: auto;
 	height:100%;
+	margin: 0;
 	margin-left: auto;
 	overflow-y: hidden;
 	background: none;
