@@ -66,9 +66,9 @@ $post = $wp_query->post;
         	<div class="wrapper">
                 <div id="m-global-header__logo"><a href="/"><div class="logo"></div></a></div>
                 <div id="m-global-header__tagline">
-                	<div> <a href="/"><div class="brand">Austin Institute</div> <div>For The Study Of Family & Culture</div> </a></div>
-                </div>
-                <div id="m-global-header__nav" class="hidden">
+                	 <a href="/"><div class="brand">Austin Institute</div> <div>For The Study Of Family & Culture</div> </a></div>
+                
+                <div id="m-global-header__nav">
                     <ul class="menu">
                     <li><a href="/about/">About</a></li>
                     <li><a href="/research/">Research</a></li>
