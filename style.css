@@ -93,7 +93,13 @@ a:visited {
 
 #m-global-header .wrapper {
 	position: relative;
-	width: auto; }
+	display: -ms-flexbox;
+  	display: -moz-flex;
+  	display: -webkit-flex;
+  	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center; }
 
 #m-global-header__logo {
 	position: relative;
@@ -101,7 +107,6 @@ a:visited {
 	width: 48px;
 	height: 40px;
 	margin:0px;
-	/*top:-15px;*/
 	border: 0px;
 	background-image: url('/images/menulogo.png');
 	background-repeat: no-repeat;
@@ -110,11 +115,8 @@ a:visited {
 
 #m-global-header__logo a {
 	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px; }
-
+	margin: 10.5px 0; }
+	
 #m-global-header__tagline {
 	position: relative;
 	display: inline-block;
@@ -122,9 +124,20 @@ a:visited {
 	height: 100%;
 	overflow:hidden; }
 
-#m-global-header__tagline div {
+#m-global-header__tagline a {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: center;
+	width: auto;
+	height: 100%;
+	overflow:hidden; }
+
+#m-global-header__tagline a div {
 	position:relative;
-	display:inline-block;
+	display:flex;
 	overflow: hidden;
 	border: 0px;
 	color:#fff;
@@ -133,33 +146,46 @@ a:visited {
 	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 #m-global-header__nav {
+	position: relative;
+	width: auto;
+	height:100%;
+	margin: auto;
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
 	z-index: 30990;
 	overflow-y: auto;
-	background: #ebebeb;
-	position: relative; }
+	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 #m-global-header__nav ul.menu {
-	margin: 0px;
-	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
 	list-style: none;
+	text-decoration:none;
 	position: relative; }
 
 #m-global-header__nav ul.menu li {
-	border-bottom: 1px solid #CCC; }
+	height: auto;
+	margin: auto;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+	border: 0px; }
 
 #m-global-header__nav ul.menu li a {
-	display: block;
-	padding: 10px 20px;
-	font-size: 18px;
-	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #333;
-	text-decoration:none; }
+	display: inline;
+	padding: 5px 5px 5px 5px;
+	color: #FFF;
+	font-size:15px; }
 
 #m-global-header__nav ul.menu li a:hover {
-	transition: all 0.25s ease;
-	background-color:#455478;
+	transition: all 0.5s ease;
+	background-color: #455478;
 	border-radius: 2px;
-	color: #FFF; }
+	color: #FFF;}
 
 #m-global-main__filler {
 	width: 100%;
@@ -722,7 +748,7 @@ display: none; }
   	display: -webkit-flex;
   	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	align-items: center; }
 
 #m-global-header__logo {
@@ -746,7 +772,6 @@ display: none; }
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: flex-start;
 	align-content: center;
 	width: auto;
 	height: 100%;
@@ -755,6 +780,7 @@ display: none; }
 #m-global-header__tagline a div {
 	position:relative;
 	display:flex;
+	height: 50%;
 	overflow: hidden;
 	border: 0px;
 	color:#fff;
@@ -769,13 +795,14 @@ display: none; }
 	overflow-y: hidden;
 	background: none;
 	display: inline-flex;
-	flex-wrap: no-wrap;
+	flex-wrap: nowrap;
 	flex-direction: row;
 	align-items: center; }
 
 #m-global-header__nav ul.menu {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center; }
 
 #m-global-header__nav ul.menu li {
