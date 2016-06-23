@@ -1444,6 +1444,57 @@ margin-left: 0; }
 
 @media only screen and (min-width: 769px) {
 
+#mscover {
+	position: fixed;
+	z-index: 12999;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: #fff;
+	background: rgba(255,255,255,.70); }
+	
+#mscontainer {
+	position: relative;
+	margin: auto;
+	width: 500px;
+	height: auto;
+	background: #fff;
+	border: 1px solid #37b8eb;
+	border-radius: 2px;
+	color: #333; }
+	
+#msheader {
+	display: block;
+	background: #37b8eb;
+	color: #fff;
+	padding: 16px 24px;
+	text-align: center; }
+	
+#msheader h1 {
+	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 28px;
+	font-style: italic;
+	text-transform: uppercase;
+	color: #fff;
+	margin: 0; }
+	
+#mscontent {
+	width: 400px;
+	margin: 24px auto;
+	/*padding: 12px 24px;*/
+	font-size: 0px;
+	text-align: left; }
+	
+#mscontent p {
+	margin: 24px 0px;
+	font-size: 16px;
+	line-height: 22px;
+	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #333; }
+
 .gridContainer {
 	width: 88.5%;
 	max-width: 1500px;
