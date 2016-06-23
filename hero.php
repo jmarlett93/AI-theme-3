@@ -62,7 +62,7 @@ if(is_home()):
 			<?php echo($herohtml); ?>
 			
         </div>
-        
+
 <?php return; elseif(is_archive() || in_category($cmslug->term_id) || is_page('topics')): 
 		$queried_object = get_queried_object();
 		$taxonomy = $queried_object->taxonomy;

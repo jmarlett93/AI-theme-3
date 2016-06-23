@@ -347,7 +347,7 @@ $(document).scroll(function() {
 				
 			$(this).find(".footer").css("opacity", 1 - 2*(window.pageYOffset / ($(this).attr("data-origin-height") - $($(this).attr("data-minHeight")).height())));
 			if(!$(this).find("figure.blur").hasClass("hide")) { $(this).find("figure.blur").addClass("hide"); }
-			$(".side-nav").css({"position" : "static"});
+			//$(".side-nav").css({"position" : "static"});
 		}
 		else{
 			if($(this).siblings(".parallaxFiller").length < 1) {
@@ -357,17 +357,22 @@ $(document).scroll(function() {
 				"position": "fixed",
 				"top": ($(this).height() - $($(this).attr("data-minHeight")).height())*-1 + "px" });
 				
-			if($(this).find("figure.blur").hasClass("hide")) { $(this).find("figure.blur").removeClass("hide"); }
-			
-		$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px"});
-			
-		if( $(".side-nav").offset().top + $(".side-nav").height() > $("footer").offset().top ) {
-        	$(".side-nav").css({bottom : $("footer").outerHeight() + "px"}); 
-		}
-    if($(document).scrollTop() + window.innerHeight < $("footer").offset().top) {
-        $(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px", "bottom" : 0 + "px" }); 
-		// restore when you scroll up 
+			if($(this).find("figure.blur").hasClass("hide")) { $(this).find("figure.blur").removeClass("hide"); 
 			}
+			
+		if( $(".side-nav") == true) {
+			
+			//if ( $(document).scrollTop(0) ) {
+				$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px"});
+				//}
+			if( $(".side-nav").offset().top + $(".side-nav").height() > $("footer").offset().top ) {
+        		$(".side-nav").css({bottom : $("footer").outerHeight() + "px"}); 
+		     	}
+        	else if ( $(document).scrollTop() + window.innerHeight < $("footer").offset().top) {
+        		$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px", "bottom" : 0 + "px" }); 
+		// restore when you scroll up 
+				}	  			
+		    }
 		}
 	});
 	  

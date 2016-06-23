@@ -5,18 +5,6 @@ if($isPipe):
 header('Content-Type: application/json');
 endif;
 
-$post_hero;
-ob_start();
-get_template_part('hero');
-$post_hero = ob_get_contents();
-ob_end_clean();
-
-$side_nav;
-ob_start();
-get_template_part('sideNav');
-$side_nav = ob_get_contents();
-ob_end_clean();
-
 $title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
 
 $queried_object = get_queried_object(); 
@@ -39,6 +27,18 @@ $args = array(
 );
 $posts_array = get_posts( $args );
 
+$post_hero;
+ob_start();
+get_template_part('hero');
+$post_hero = ob_get_contents();
+ob_end_clean();
+
+$side_nav;
+ob_start();
+get_template_part('sideNav');
+$side_nav = ob_get_contents();
+ob_end_clean();
+
 $isPipe = $_GET['ajaxpipe'];
 
 $field = get_field('hero_image', $taxonomy . '_' . $term_id);
@@ -56,7 +56,6 @@ $t = '<div class="category-result result visible" data-postid="' . get_the_ID() 
 if($d > $td): $article_list_html_new .= $t; else: $article_list_html_old = $t . $article_list_html_old; endif;
 endforeach; wp_reset_postdata();
 if($article_list_html_old != ''): $article_list_html_old = "<div class=\"sectionHeading\"><div class=\"title\">Past Events</div></div>" . $article_list_html_old; endif;
-if($article_list_html_new != ''): $article_list_html_new = "<div class=\"sectionHeading\"><div class=\"title\">Upcoming Events</div></div>" . $article_list_html_new; endif;
 
 $content = <<<AI_CATEGORYRESEARCH_MAIN
 
@@ -77,8 +76,8 @@ $response = array(
 	"title" => $title . " | Austin Institute",
 	"url" => get_post_type_archive_link('events'),
 	"main" => $content,
-	"pageReady" => "\$(window).resize();ai.searchPage.setSearch();\$(\"footer\").addClass(\"hidden\");\$(\"#m-global-header\").addClass(\"backgroundTransparent\");",
-	"pageLeave" => "\$(\"#s\").off(\"keyup\");\$(\"footer\").removeClass(\"hidden\");\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");"
+	"pageReady" => "\$(window).resize();ai.searchPage.setSearch();\$(\"#m-global-header\").addClass(\"backgroundTransparent\");",
+	"pageLeave" => "\$(\"#s\").off(\"keyup\");\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");"
 	);
 	
 if ( !$isPipe ):
