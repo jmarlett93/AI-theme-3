@@ -72,6 +72,26 @@ if(is_home()):
 		if(is_page()):
 			$hero_image = get_field('background_image');
 			$title = get_the_title();
+		
+		elseif(is_post_type_archive('events')):
+			$args = array(
+    		'numberposts'   	   => -1,
+			'offset'           => 0,
+			'offset'           => 0,
+			'include'          => '',
+			'exclude'          => '',
+			'meta_key'         => 'event_date',
+			'orderby'          => 'meta_value_num',
+			'order'            => 'ASC',
+			'post_type'        => 'events',
+			'post_mime_type'   => '',
+			'post_parent'      => '',
+			'post_status'      => 'publish',
+			'suppress_filters' => true );
+			//$recent_event = get_post( $args);
+			$hero_image =get_field('hero_image', $recent_event);
+			$title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
+			
 		else:
 			$hero_image = get_field('hero_image', $taxonomy . '_' . $term_id);
 			$title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
@@ -82,6 +102,7 @@ if(is_home()):
             <figure class="blur hide" style="background-image:url(<?php echo $hero_image['url']; ?>)"></figure>
             <div class="gridContainer clearfix"></div>
         </div>
+
 <?php return; elseif(is_page()): ?>
         <div id="m-page-main__hero" class="clearfix" data-origin-height="237" data-minHeight="#m-global-header">
             <div class="gridContainer clearfix"></div>

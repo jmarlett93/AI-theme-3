@@ -186,7 +186,7 @@ a:visited {
 	border-radius: 2px;
 	color: #FFF; }
 	
-#m-global-header__nav ul.menu li a.support {
+#m-global-header__nav ul.menu li a.donate {
 	display: inline;
 	padding: 5px 5px 5px 5px;
 	font-weight: 600;
@@ -195,11 +195,11 @@ a:visited {
 	border-radius: 2px;
 	font-size:15px; }
 	
-#m-global-header__nav ul.menu li a.support:hover {
+#m-global-header__nav ul.menu li a.donate:hover {
 	transition: all 0.5s ease;
 	background-color: #FFF;
 	border-radius: 2px;
-	color: #FF0A0A; } 
+	color: #000; } 
 
 #m-global-main__filler {
 	width: 100%;
@@ -326,6 +326,9 @@ main {
 	justify-content: center;
 	align-content: center; 
 	margin:auto;}
+	
+#main article h1 {
+	margin: auto;}
 	
 #main article form {
 	margin: auto;

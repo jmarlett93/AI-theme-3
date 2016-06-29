@@ -34,6 +34,7 @@ $content = <<<AI_HEREDOC_PAGE_MAIN
             $post_hero
 			<div class="gridContainer clearfix">
 				<div id="main">
+					<h1>$title</h1>
 					<article>
 						$article
 					</article>

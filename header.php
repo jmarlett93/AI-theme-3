@@ -30,7 +30,13 @@ $post = $wp_query->post;
 <meta property="og:site_name" content="Austin Institute for the Study of Family and Culture"/>
 <meta property="og:url" content="<?php if(is_home()) { echo home_url(); } else if(is_category()) { echo get_category_link($cat->term_id); } else if(is_page()) { echo get_permalink( $post->ID ); } else { echo get_permalink(); } ?>"/>
 <meta property="og:description" content="<?php if(is_page()) { the_excerpt(); } else { echo get_bloginfo('description'); } ?>"/>
-<meta property="og:image" content="<?php if(in_category('media', $post->ID)) { if(get_field("media_type", $post->ID) == "image") { $field = get_field("image_media", $post->ID); echo $field['url']; } else { $field = get_field("video_media_cover", $post->ID); echo $field['url']; } } else if(in_category('research', $post->ID) && get_field("hero_image", $cat->term_id)) { $field = get_field("hero_image", $cat->term_id); echo $field['url']; } else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
+<meta property="og:image" content="<?php if(in_category('media', $post->ID)) { if(get_field("media_type", $post->ID) == "image") { $field = get_field("image_media", $post->ID); echo $field['url']; } else { $field = get_field("video_media_cover", $post->ID); echo $field['url']; } } 
+
+else if(in_category('research', $post->ID) && get_field("hero_image", $cat->term_id)) { $field = get_field("hero_image", $cat->term_id); echo $field['url']; } 
+
+else if(is_archive('events', $post->ID)&& get_field("hero_image", $cat->term-id)){$field = get_field("hero_image", $cat->term_id); echo $field['url'];} 
+
+else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 <meta name="twitter:card" content="<?php if(in_category('media', $post->ID)) { if(get_field("media_type", $post->ID) == "image") { echo "photo"; } else { echo "player"; } } else { echo "summary"; } ?>" />
 <meta name="twitter:url" content="<?php if(is_home()) { echo home_url(); } else if(is_category()) { echo get_category_link($cat->term_id); } else if(is_page()) { echo get_permalink( $post->ID ); } else { echo get_permalink(); } ?>" />
 <meta name="twitter:title" content="<?php if(is_home()) { echo "Austin Institute"; } else if(is_category()) { echo $cat->name . " | Austin Institute"; } else { echo get_the_title() . " | Austin Institute"; } ?>" />
@@ -75,7 +81,7 @@ $post = $wp_query->post;
                     <li><a href="/research/media/">Media</a></li>
                     <li><a href="/events/">Events</a></li>
                     <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/support/" class="support">Support</a></li>
+                    <li><a href="/support/" class="donate">Donate</a></li>
                     </ul>
                     
                 </div>
