@@ -319,7 +319,21 @@ main {
 
 #main .heading .see-all-link {
 	display: none; }
+	
+#main article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center; 
+	margin:auto;}
+	
+#main article form {
+	margin: auto;
+	display: flex; }
 
+#main article form input {
+	margin: auto;}
+	
 #News{
 	width: auto; }
 

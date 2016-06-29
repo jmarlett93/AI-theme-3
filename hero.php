@@ -80,11 +80,11 @@ if(is_home()):
         <div id="m-archive-main__hero" class="parallax clearfix" data-origin-height="237" data-minHeight="#m-global-header">
         	<figure style="background-image:url(<?php echo $hero_image['url']; ?>)"></figure>
             <figure class="blur hide" style="background-image:url(<?php echo $hero_image['url']; ?>)"></figure>
-            <div class="gridContainer clearfix"><div class="footer"><?php echo $title; ?></div></div>
+            <div class="gridContainer clearfix"></div>
         </div>
 <?php return; elseif(is_page()): ?>
         <div id="m-page-main__hero" class="clearfix" data-origin-height="237" data-minHeight="#m-global-header">
-            <div class="gridContainer clearfix"><div class="footer"><?php echo get_the_title(); ?></div></div>
+            <div class="gridContainer clearfix"></div>
         </div>
 <?php return; else: ?>
         <div id="m-single-main__hero" class="parallax clearfix" data-origin-height="584" data-minHeight="#m-global-header">
