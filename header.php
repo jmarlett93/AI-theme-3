@@ -75,7 +75,7 @@ $post = $wp_query->post;
                     <li><a href="/research/media/">Media</a></li>
                     <li><a href="/events/">Events</a></li>
                     <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/support/">Support</a></li>
+                    <li><a href="/support/" class="support">Support</a></li>
                     </ul>
                     
                 </div>

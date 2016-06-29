@@ -184,7 +184,22 @@ a:visited {
 	transition: all 0.5s ease;
 	background-color: #455478;
 	border-radius: 2px;
-	color: #FFF;}
+	color: #FFF; }
+	
+#m-global-header__nav ul.menu li a.support {
+	display: inline;
+	padding: 5px 5px 5px 5px;
+	font-weight: 600;
+	color: #FFF;
+	background-color: #FF0A0A;
+	border-radius: 2px;
+	font-size:15px; }
+	
+#m-global-header__nav ul.menu li a.support:hover {
+	transition: all 0.5s ease;
+	background-color: #FFF;
+	border-radius: 2px;
+	color: #FF0A0A; } 
 
 #m-global-main__filler {
 	width: 100%;
