@@ -74,7 +74,7 @@ if(is_home()):
 			$title = get_the_title();
 		
 		elseif(is_post_type_archive('events')):
-			$args = array(
+			/*$args = array(
     		'numberposts'   	   => -1,
 			'offset'           => 0,
 			'offset'           => 0,
@@ -87,9 +87,9 @@ if(is_home()):
 			'post_mime_type'   => '',
 			'post_parent'      => '',
 			'post_status'      => 'publish',
-			'suppress_filters' => true );
+			'suppress_filters' => true );*/
 			//$recent_event = get_post( $args);
-			$hero_image =get_field('hero_image', $recent_event);
+			$hero_image = get_field('hero_image');
 			$title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
 			
 		else:
