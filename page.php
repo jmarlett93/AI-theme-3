@@ -1,65 +1,59 @@
 <?php 
-
 $isPipe = $_GET['ajaxpipe'];
 if($isPipe):
 header('Content-Type: application/json');
-endif;
+endif; ?>
 
-$post_hero;
+<?php $post_hero;
 ob_start();
 get_template_part('hero');
 $post_hero = ob_get_contents();
-ob_end_clean();
+ob_end_clean(); ?>
 
-$field = get_field('background_image');
+<?php $field = get_field('background_image');
 $backgroundimage = $field['url'];
 $title = "";
 $article = "";
+$donate = "";
 if (have_posts()): while (have_posts()) : the_post();
 	$article = do_shortcode(wpautop(get_the_content()));
 	$title = get_the_title();
-endwhile; endif;
-$content = <<<AI_HEREDOC_PAGE_MAIN
+endwhile; endif; ?>
+ 
+<?php $content = <<<AI_PAGE
 
 <style type="text/css">
 #contentContainer.parallax-cover { 
 	background-image:url($backgroundimage);
 	background-attachment: fixed;
 	background-position: top center;
-	background-size: cover;
-}
+	background-size: cover; }
 </style>
 
 		<div id="contentContainer" class="clearfix parallax-cover">
-            $post_hero
+            $post_hero 
 			<div class="gridContainer clearfix">
 				<div id="main">
 					<h1>$title</h1>
+					<div> $donate </div>
 					<article>
 						$article
 					</article>
 				</div>
 			</div>
-        </div>
+        </div>  
+AI_PAGE; ?>
 
-AI_HEREDOC_PAGE_MAIN;
+<?php get_footer(); ?> <!-- THis is not working yet!!!-->
 
-$response = array(
+<?php
+    $response = array(
 	"title" => $title . " | Austin Institute",
 	"url" => get_the_permalink(),
 	"main" => $content,
 	"pageReady" => "\$(\"#m-global-header\").addClass(\"backgroundTransparent\");",
-	"pageLeave" => "\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");"
-	);
+	"pageLeave" => "\$(\"#m-global-header\").removeClass(\"backgroundTransparent\");" );
 
-if ( !$isPipe ):
+ if (!$isPipe){ get_header(); echo $response["main"]; echo "<script>ai.page.ready=" . json_encode($response["pageReady"]) . ";ai.page.leave=" . json_encode($response["pageLeave"]) . ";</script>"; get_footer();
 
-get_header(); echo $response["main"]; echo "<script>ai.page.ready=" . json_encode($response["pageReady"]) . ";ai.page.leave=" . json_encode($response["pageLeave"]) . ";</script>"; get_footer();
-
-else:
-
-echo json_encode($response);
-
-endif;
-
-?>
+ } elseif { echo json_encode($response); } ?>

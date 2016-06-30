@@ -74,7 +74,8 @@ if(is_home()):
 			$title = get_the_title();
 		
 		elseif(is_post_type_archive('events')):
-			/*$args = array(
+			/*Queries events to display hero image for most recent event on event page*/
+			$args = array(
     		'numberposts'   	   => -1,
 			'offset'           => 0,
 			'offset'           => 0,
@@ -82,14 +83,14 @@ if(is_home()):
 			'exclude'          => '',
 			'meta_key'         => 'event_date',
 			'orderby'          => 'meta_value_num',
-			'order'            => 'ASC',
+			'order'            => 'DEsSC',
 			'post_type'        => 'events',
 			'post_mime_type'   => '',
 			'post_parent'      => '',
 			'post_status'      => 'publish',
-			'suppress_filters' => true );*/
-			//$recent_event = get_post( $args);
-			$hero_image = get_field('hero_image');
+			'suppress_filters' => true );
+			$recent_event = get_posts( $args);
+			$hero_image = get_field('hero_image', $recent_event[0]);
 			$title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
 			
 		else:
