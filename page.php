@@ -15,7 +15,6 @@ ob_end_clean();
 $backgroundimage = $field['url'];
 $title = "";
 $article = "";
-$donate = "";
 if (have_posts()): while (have_posts()) : the_post();
 	$article = do_shortcode(wpautop(get_the_content()));
 	$title = get_the_title();

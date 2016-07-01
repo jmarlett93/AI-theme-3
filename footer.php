@@ -1,6 +1,6 @@
 	</main>
     <footer>
-    	<div class="gridContainer clearfix">
+    	<div class="flex-footer">
         	<div id="footerLogoContainer"></div>
             <div id="footerContactContainer">
             	1611 West Ave. Austin, TX 78701<br />
