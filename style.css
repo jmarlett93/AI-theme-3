@@ -483,7 +483,42 @@ footer {
 	background: #333;
 	color: #FFF;
 	padding: 28px 0px; 
-	clear:left;}
+	clear:left; }
+	
+#main article .donate {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin:auto;
+	margin-top:2rem;
+	background-color: #3ED441;
+	border: 3px solid #3ED441;
+	border-radius: 4px;
+	padding: 1.5rem; }
+	
+#main article .donate > .donor-box {
+	text-shadow: 1px 1px 1px #FFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-bottom: auto;
+	width: 90%;}
+
+#main article .donate > .donor-box > h1 {
+	font-size: 1.2em;
+	text-align: center;
+	align-self:flex-start;
+	margin-bottom: 2rem; }
+	
+#main article .donate > .donor-box > p {
+	align-self:center;
+	text-align: center;
+	margin:auto; }
+	
+#main article .donate > .donor-box > form {
+	align-self:center;
+	text-align: center;
+	margin-top:auto; }
 	
 #footerLogoContainer {
 	display: none; }
@@ -894,8 +929,7 @@ main {
 	padding-left: 1.1625%;
 	padding-right: 1.1625%;
 	/*clear: none;*/
-	float: none;
-	margin-left: auto; }
+	float: none; }
 	
 #headContainer{
 	padding: 21px 0px; }
@@ -953,38 +987,10 @@ main {
 	padding-right: 64px; }
 	
 #main article .donate {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin:auto;
-	margin-top:2rem;
-	background-color: #3ED441;
-	border: 3px solid #3ED441;
-	border-radius: 4px; }
+	flex-direction: row; }
 	
 #main article .donate > .donor-box {
-	text-shadow: 1px 1px 1px #FFF;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	margin-bottom: auto;
-	width: 45%;}
-
-#main article .donate > .donor-box > h1 {
-	font-size: 1.2em;
-	text-align: center;
-	align-self:flex-start;
-	margin-bottom: 2rem; }
-	
-#main article .donate > .donor-box > p {
-	align-self:center;
-	text-align: center;
-	margin:auto;}
-	
-#main article .donate > .donor-box > form {
-	align-self:center;
-	text-align: center;
-	margin-top:auto;}
+	width: 45%; }
 
 #News .col li {
 	padding: 10px 0px 10px 0px;
@@ -1257,9 +1263,11 @@ article{
 	color: #333; }
 	
 #contentContainer #main {
-	padding: 72px;
-	margin: 72px 136px 144px 136px;
-	width: 66.67% }
+	margin: 1.5rem;
+	width: auto; 
+	display:flex;
+	align-content: center;
+	flex-direction: column}
 	
 .singleFormInput-text {
 	overflow: hidden;
