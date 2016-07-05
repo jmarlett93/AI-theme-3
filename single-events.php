@@ -59,9 +59,6 @@ $content = <<<AI_HEREDOC_SINGLE_MAIN
 		$post_hero
         <div id="main" class="gridContainer clearfix readermain">
           <div class="col-two" style="margin-top: 10px;">
-<div class="info-section">
-            
-            </div>
           	<div class="info-section">
             	<div class="title">Most Popular</div>
             	<ol class="article-list">$pop_posts_html</ol>
