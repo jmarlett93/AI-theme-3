@@ -364,7 +364,7 @@ $(document).scroll(function() {
 	
 		var sideNavCheck = document.querySelectorAll(".side-nav");
 		
-		if ( sideNavCheck.length != 0) {
+		if ( sideNavCheck.length != 0 ) {
 			
 			$(".side-nav").css({"position" : "fixed", "top" : $($this.attr("data-minHeight")).height() + ($("#main").innerHeight() - $("#main").height())/2 + "px"});
 			

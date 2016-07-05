@@ -60,8 +60,7 @@ $content = <<<AI_HEREDOC_SINGLE_MAIN
         <div id="main" class="gridContainer clearfix readermain">
           <div class="col-two" style="margin-top: 10px;">
 <div class="info-section">
-            	<div class="title">Receive Research Updates</div>
-                            	<div class="singleFormInput-text"><input type="submit" value="GO" /><input type="text" value="email address" /></div>
+            
             </div>
           	<div class="info-section">
             	<div class="title">Most Popular</div>
