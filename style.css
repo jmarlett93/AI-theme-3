@@ -378,6 +378,11 @@ main {
 #main article form input {
 	margin: auto;}
 	
+#main article p {
+	margin-top: 0.75em;
+	margin-bottom: 0;
+	line-height: 1.2;}
+	
 #News{
 	width: auto; }
 
@@ -560,6 +565,24 @@ main {
 	align-self:center;
 	text-align: center;
 	margin-top:auto; }
+
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: auto;
+	width: 90%;}
+	
+.contact-container > img, .contact-info {
+	margin: auto; }
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; }
+
+.contact-info > p, a {
+	margin:auto; }
 	
 footer {
 	border-top: 6px solid #455478;
@@ -1049,6 +1072,18 @@ main {
 	
 #main article .donate > .donor-box {
 	width: 45%; }
+	
+.contact-container {
+	flex-direction: row;
+	justify-content: flex-start; }
+	
+/*.contact-container > img, .contact-info {
+	margin: auto; }
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; }*/
 
 #News .col li {
 	padding: 10px 0px 10px 0px;
