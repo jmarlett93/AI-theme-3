@@ -447,8 +447,12 @@ main {
 #social {
 	display: flex;
 	align-content: flex-start;
+	justify-content:flex-start;
 	flex-direction:row;
 	width: auto; }	
+
+#social a {
+	margin: 0;}
 
 #social a .item {
 	display: inline-block;
