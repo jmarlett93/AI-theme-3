@@ -11,6 +11,8 @@ $researchandnewscol1 = '';
 
 $mediacol = '';
 
+$directorposts = '';
+
 $post_hero;
 ob_start();
 get_template_part('hero');
@@ -52,39 +54,39 @@ $media_posts = query_posts( $argsm, ARRAY_A );
 if (have_posts()): $i = 0; while(have_posts()) : the_post(); $fieldi = get_field('image_media'); $fieldv = get_field('video_media_cover'); $t = '<li' . ($i > 9 ? ' class="no-mobile"' : '') . '><a href="' . get_the_permalink() . '"><figure class="mediapreview" style="background-image: url(' . (get_field('media_type') == 'image' ? $fieldi['url'] : $fieldv['url']) . ');"></figure></a></li>'; $mediacol .= $t; $i++; endwhile; endif;
 wp_reset_query();
 
-$latest_tweets = display_latest_tweets('AtxInstitute');
+$argsd = array(
+	'numberposts' => 3,
+	 'offset' => 0,
+	 'posts_per_page' => 3,
+	 'tag' => 'director-pick',
+	 'order' => 'DESC',
+	 'post_type'=> 'post',
+	 'post_status' => 'publish',
+	 'suppress_filters' => true );
+	 
+$d_posts = get_posts($argsd, ARRAY_A);
+
+$id = 0;
+
+for($id = 0; $id < count($d_posts); $id++ ): setup_postdata($post);
+	$directorposts .= '<div class="dir_post"><h1>' . get_the_title() . '</h1><div class="excerpt">' . get_the_excerpt() . '</div><a href="'. get_permalink($d_posts[$id]->ID) . '">read more...</a></div>' ;
+endfor;
+
+wp_reset_postdata();
 
 $content = <<<AI_HEREDOC_HOME_MAIN
 
 		$post_hero
-        <!--$latest_tweets
-		<script>
-			var i = 0;\$(".tweet").each(function(){\$(this).attr("data-slideindex",i);if(i>0){\$(this).hide();}i++;});
-			var SlideCount = \$(".tweet").length;
-			function gotoSlide(slideIndex) {
-				var slideshow = \$(".home-slideshow");
-				var currentSlide = \$(".activeSlide");
-				var nextSlide = \$("div[data-slideindex=" + slideIndex + "]");
-				nextSlide.css("position","absolute");
-				nextSlide.insertBefore(currentSlide);
-				currentSlide.fadeOut(400);
-				currentSlide.removeClass("activeSlide");
-				nextSlide.addClass("activeSlide");
-				nextSlide.fadeIn(400);
-				clearTimeout(SlideTime);
-				SlideTime = setTimeout('nextSlide()', 8000);
-			}
-			function nextSlide() {
-				var slideshow = $(".home-slideshow");
-				var nextSlideIndex = (parseInt(\$(".activeSlide").attr("data-slideindex")) + 1) % SlideCount;
-				gotoSlide(nextSlideIndex);
-			}
-			\$(".tweet").eq(0).addClass("activeSlide");
-			var SlideTime = setTimeout('nextSlide()', 8000);
-        </script>-->
-        
        
         <div id="main" class="gridContainer clearfix">
+        
+        	<section class="director-picks">
+				<h1>Director Picks and News</h1>
+					<div class="flex-container">
+        				$directorposts 
+					</div>
+        	</section>
+        
           <div id="Media">
           	
 				<div class="heading">

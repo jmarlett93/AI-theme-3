@@ -371,17 +371,25 @@ main {
 #main article h1 {
 	margin: auto;}
 	
-#main article form {
+#main article form.donate {
 	margin: auto;
 	display: flex; }
 
-#main article form input {
+#main article form.donate input {
 	margin: auto;}
 	
 #main article p {
 	margin-top: 0.75em;
 	margin-bottom: 0;
 	line-height: 1.2;}
+
+#main .director-pick {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	width: 100%; 
+	margin:auto; }
 	
 #News{
 	width: auto; }
@@ -1050,7 +1058,7 @@ main {
 	color: #333; }
 
 #main {
-	padding: 64px 0px; }
+	padding: 1rem 0; }
 	
 #main .col-two {
 	display: block; }
@@ -1080,14 +1088,6 @@ main {
 .contact-container {
 	flex-direction: row;
 	justify-content: flex-start; }
-	
-/*.contact-container > img, .contact-info {
-	margin: auto; }
-
-.contact-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center; }*/
 
 #News .col li {
 	padding: 10px 0px 10px 0px;
@@ -1336,6 +1336,8 @@ article {
 	
 #contentContainer #main {
 	margin: 1.5rem;
+	margin-bottom: 7
+	rem;
 	width: auto; 
 	display:flex;
 	align-content: center;
