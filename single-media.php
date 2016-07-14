@@ -5,9 +5,9 @@ if($isPipe):
 header('Content-Type: application/json');
 endif;
 
-/*if ( !$isPipe ): 
+if ( !$isPipe ): 
 header('Location: /research/media?mediapermalink=' . urlencode(get_permalink()));
-endif;*/
+endif;
 
 setPostViews(get_the_ID());
 
@@ -49,7 +49,7 @@ else if (get_field('media_type') == 'video_embedded') {
 
 endwhile;
 
-//$referrer = urlencode(($_GET['ref'] ? "?ref=" . $_GET['ref'] : $_SERVER['HTTP_REFERER']));
+$referrer = urlencode(($_GET['ref'] ? "?ref=" . $_GET['ref'] : $_SERVER['HTTP_REFERER']));
 	
 $content = <<<AI_HEREDOC_SINGLEANIMATE_MAIN
 		    
