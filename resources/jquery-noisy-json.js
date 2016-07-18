@@ -2,7 +2,7 @@
 
     var i = 0;
 
-    $.ajaxPrefilter('njson json',function(options, origOptions, jqXHR) {
+    $.ajaxPrefilter('njson json',function(options, originalOptions, jqXHR) {
         
         options.njson = true;
     });
