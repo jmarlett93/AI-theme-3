@@ -114,6 +114,17 @@ function create_post_type() {
   );
 }
 
+function ip_wpcf7_mail_sent($wpcf7)
+{
+	$on_sent_ok = $wpcf7->additional_setting('ip_on_sent_ok', false);
+
+	if (is_array($on_sent_ok) && count($on_sent_ok) > 0)
+	{
+		wp_redirect(trim($on_sent_ok[0]));
+		exit;
+	}
+}
+
 function page_hook(){
 	do_action('page_hook'); }//custom hook for modifying static page behaviour
 	
@@ -131,5 +142,6 @@ add_filter('excerpt_more', 'new_excerpt_more');
 add_filter('single_template', 'get_custom_cat_template');
 add_action( 'init', 'create_post_type' );
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
+add_action('wpcf7_mail_sent', 'ip_wpcf7_mail_sent');
 
 ?>
