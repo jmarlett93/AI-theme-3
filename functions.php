@@ -114,8 +114,7 @@ function create_post_type() {
   );
 }
 
-function ip_wpcf7_mail_sent($wpcf7)
-{
+function ip_wpcf7_mail_sent($wpcf7) {
 	$on_sent_ok = $wpcf7->additional_setting('ip_on_sent_ok', false);
 
 	if (is_array($on_sent_ok) && count($on_sent_ok) > 0)
