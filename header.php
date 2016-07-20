@@ -47,10 +47,10 @@ else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 <script src="//use.typekit.net/imk1gxm.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 <script src="<?php bloginfo('template_directory'); ?>/resources/jquery.history.js"></script>
-<script async src="<?php bloginfo('template_directory'); ?>/resources/respond.min.js"></script>
-<script async src="<?php bloginfo('template_directory'); ?>/resources/masonry.pkgd.min.js"></script>
-<script async src="<?php bloginfo('template_directory'); ?>/resources/imagesloaded.pkgd.min.js"></script>
-<script async src="<?php bloginfo('template_directory'); ?>/resources/jquery-noisy-json.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/resources/respond.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/resources/masonry.pkgd.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/resources/imagesloaded.pkgd.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/resources/jquery-noisy-json.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/resources/ai.js"></script>
 
 <style type="text/css">
