@@ -402,6 +402,8 @@ main {
 	color: #333;
 	font-size: 17px;
 	line-height: 17px; }
+	#News .col li:hover{
+		color: #005198;} 
 
 #News .col ul a {
 	text-decoration:none; }
