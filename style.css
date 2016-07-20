@@ -382,14 +382,6 @@ main {
 	margin-top: 0.75em;
 	margin-bottom: 0;
 	line-height: 1.2;}
-
-#main .director-pick {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	width: 100%; 
-	margin:auto; }
 	
 #News{
 	width: auto; }
@@ -410,11 +402,11 @@ main {
 	color: #333;
 	font-size: 17px;
 	line-height: 17px; }
-	#News .col li:hover {
-		color: #005198;}
 
 #News .col ul a {
 	text-decoration:none; }
+	#News .col ul a:hover{
+		color: #005198;} 
 
 .mediaBox {
 	width:100%;
