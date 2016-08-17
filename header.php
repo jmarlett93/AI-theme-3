@@ -65,6 +65,7 @@ else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 		border-color: rgba(51,51,51,0);
 	}
 </style>
+<?php wp_head(); ?>
 </head>
 <body>
 	<header style="padding-bottom:0px;">

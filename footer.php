@@ -18,5 +18,6 @@
     <div id="maillistform" class="hidden"><div id="msheader"><h1>Subscribe!</h1></div><div id="mscontent"><p>Sign-up for our email newsletter for the latest in research, reports, events and other opportunitites to participate in changing the dialogue about family and culture in America.</p><?php echo do_shortcode('[mc4wp_form]'); ?><p style="text-align:center;"><a href="#" 
 class="mscontrol" data-ms-control-action="exit">No thank 
 you!</a></p></div><script class="temp" type="text/javascript">$(".wpcf7").find("form").each(function(){$(this).attr("action",$(this).attr("action").substring($(this).attr("action").indexOf('#')));});$(".cform-field").each(function(){$(this).find("input").attr("placeholder",$(this).attr("data-placeholder"));});$("script.temp").remove();</script></div>
+<?php wp_footer(); ?>
 </body>
 </html>
