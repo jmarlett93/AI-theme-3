@@ -650,8 +650,7 @@ width: 100%; }
 img.alignleft {
 	padding: 4px;
 	margin: 2px 8px 3px 3px;
-	display: inline;
-	border: 1px solid #cbcdcc; }
+	display: inline; }
 	
 .alignright {
 	float: right; }
@@ -659,8 +658,7 @@ img.alignleft {
 img.alignright {
 	padding: 4px;
 	margin: 2px 3px 3px 8px;
-	display: inline;
-	border: 1px solid #cbcdcc; }
+	display: inline; }
 	
 .aligncenter {
 	margin-left: auto;
