@@ -3,7 +3,8 @@
     	<div class="flex-footer">
         	<div id="footerLogoContainer"></div>
             <div id="footerContactContainer">
-            	1611 West Ave. Austin, TX 78701<br />
+            	2021 Guadalupe St. Suite 236
+                Austin, TX 78705<br />
                 (512) 368-4213<br />
                 info@austin-institute.org<br />
                 &copy; 2015 Austin Institute for The Study of Family and Culture
