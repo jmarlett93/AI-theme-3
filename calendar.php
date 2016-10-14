@@ -1,7 +1,7 @@
-<?php if( is_active_widget( 'calendar-bar' )  ): ?>
+<?php if( is_active_sidebar( 'widget_space_1' )  ): ?>
 
     <div id="main" class="gridContainer clearfix">
-        <?php the_widget( $widget_id='calendar-bar' ); ?>
+        <?php dynamic_sidebar( 'widget_space_1' ); ?>
     </div>
 <?php endif; ?>
     

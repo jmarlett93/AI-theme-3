@@ -17,6 +17,12 @@ get_template_part('sideNav');
 $side_nav = ob_get_contents();
 ob_end_clean();
 
+$widget_space;
+ob_start();
+get_template_part('calendar');
+$widget_space = ob_get_contents();
+ob_end_clean();
+
 $title = explode(": ", get_the_archive_title(), 2); $title = $title[1];
 
 $queried_object = get_queried_object(); 
@@ -66,6 +72,7 @@ $content = <<<AI_CATEGORYRESEARCH_MAIN
             </div>
             <div class="col-two resultscontainer">
             $article_list_html_new
+            $widget_space
 			$article_list_html_old
             </div>
         </div>

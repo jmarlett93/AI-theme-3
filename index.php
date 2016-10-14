@@ -17,13 +17,6 @@ get_template_part('hero');
 $post_hero = ob_get_contents();
 ob_end_clean();
 
-$calendar_widget;
-ob_start();
-get_template_part('calendar');
-$calendar_widget = ob_get_contents();
-ob_end_clean();
-
-
 $cslug = get_category_by_slug( 'research' );
 $argsc1 = array(
     'numberposts' => 9,
@@ -59,9 +52,7 @@ wp_reset_query();
 $content = <<<AI_HEREDOC_HOME_MAIN
 
 	   $post_hero
-       
-       $calendar_widget
-       
+
         <div id="main" class="gridContainer clearfix">
         
           <div id="Media">

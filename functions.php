@@ -124,11 +124,12 @@ function ip_wpcf7_mail_sent($wpcf7) {
 	}
 }
 
-function calendar_widget_init() {
 
-	register_widget( array(
-	'id'          => 'calendar-bar',
-	'name'        => 'calendar',
+function horizontal_widget_init() {
+
+    register_sidebar( array(
+	'id'          => 'widget_space_1',
+	'name'        => 'horizontal_widget_space',
     'before_widget' => '<div>',
     'after_widget'  => '</div>',
 	'before_title'  => '<h2 class="rounded">',
@@ -157,6 +158,6 @@ add_filter('single_template', 'get_custom_cat_template');
 add_action( 'init', 'create_post_type' );
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 add_action('wpcf7_mail_sent', 'ip_wpcf7_mail_sent');
-add_action( 'widgets_init', 'calendar_widget_init' );
+add_action( 'widgets_init', 'horizontal_widget_init' );
 
 ?>
