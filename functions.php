@@ -124,6 +124,20 @@ function ip_wpcf7_mail_sent($wpcf7) {
 	}
 }
 
+function calendar_widget_init() {
+
+	register_widget( array(
+	'id'          => 'calendar-bar',
+	'name'        => 'calendar',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="rounded">',
+	'after_title'   => '</h2>',
+	'description' => __( 'google calendar', 'text_domain' ),
+) );
+}
+
+
 function page_hook(){
 	do_action('page_hook'); }//custom hook for modifying static page behaviour
 	
@@ -131,6 +145,7 @@ function modify_page_display(){
 	if(is_page('support')) {
 	 echo '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input name="cmd" type="hidden" value="_s-xclick" /><input name="hosted_button_id" type="hidden" value="WLGQQHFAWY226" /><input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" /><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" /></form>'; } 	
 	}
+
 
 add_action('page_hook','modify_page_display');
 add_action( 'parse_query', 'global_vars' );
@@ -142,5 +157,6 @@ add_filter('single_template', 'get_custom_cat_template');
 add_action( 'init', 'create_post_type' );
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 add_action('wpcf7_mail_sent', 'ip_wpcf7_mail_sent');
+add_action( 'widgets_init', 'calendar_widget_init' );
 
 ?>
