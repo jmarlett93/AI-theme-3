@@ -559,14 +559,18 @@ main {
 	align-self:flex-start;
 	margin-bottom: 2rem; }
 	
-#main article .donate > .donor-box > p {
+#main article .donate > .donor-box > #donate-button {
 	align-self:center;
 	text-align: center;
 	margin: 1em;
     width:100%;
     height: 20em; }
 
-#mailing-address{
+#main article .donate > .donor-box > #mailing-address{
+    align-self:center;
+	text-align: center;
+	margin: 1em;
+    width:100%;
     height:6em; }
 
 .contact-container {
