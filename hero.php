@@ -52,7 +52,7 @@ if(is_home()):
             	<div class="infobox"> 
                 	
                     <div class="box one">
-        	            <div class="main"> From publishing new studies to highlighting thoughtful research, our vision is to create a more informed, intelligent conversation on culturally popular and sensitive cultural topics.</div>
+        	            <div class="main"> From publishing new studies to highlighting thoughtful research, our vision is to create a more informed, intelligent conversation on popular and sensitive cultural topics.</div>
                 	</div>
                 </div> 
         </div>
