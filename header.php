@@ -17,7 +17,7 @@ $post = $wp_query->post;
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php if(is_home()) { echo "Austin Institute"; } else if(is_archive()) { echo $archiveTitle . " | Austin Institute"; } else { echo get_the_title() . " | Austin Institute"; } ?></title>
-<link type="text/css" rel="stylesheet" href="/wp-content/plugins/simple-pull-quote/css/simple-pull-quote.css">
+<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_directory'); ?>../../plugins/simple-pull-quote/css/simple-pull-quote.css">
 <link href="<?php bloginfo('template_directory'); ?>/resources/boilerplate.css" rel="stylesheet" type="text/css">
 <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
@@ -43,7 +43,11 @@ else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 <meta name="twitter:description" content="<?php if(is_page()) { the_excerpt(); } else { echo get_bloginfo('description'); } ?>" />
 <meta name="twitter:image" content="<?php if(in_category('media', $post->ID)) { if(get_field("media_type", $post->ID) == "image") { $field = get_field("image_media", $post->ID); echo $field['url']; } else { $field = get_field("video_media_cover", $post->ID); echo $field['url']; } } else if(in_category('research', $post->ID) && get_field("hero_image", $cat->term_id)) { $field = get_field("hero_image", $cat->term_id); echo $field['url']; } else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/resources/jquery-2.1.3.min.js"></script>
+<!--<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/resources/jquery-2.1.3.min.js"></script>-->
+<script
+  src="https://code.jquery.com/jquery-2.1.3.min.js"
+  integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM="
+  crossorigin="anonymous"></script>
 <script src="//use.typekit.net/imk1gxm.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 <script src="<?php bloginfo('template_directory'); ?>/resources/jquery.history.js"></script>
@@ -71,18 +75,18 @@ else { echo rtrim(home_url(),"/") . "/images/AI_logo.png"; } ?>" />
 	<header style="padding-bottom:0px;">
         <div id="m-global-header">
         	<div class="wrapper">
-                <div id="m-global-header__logo"><a href="/"><div class="logo"></div></a></div>
+                <div id="m-global-header__logo"><a href="<?php echo site_url(); ?>/"><div class="logo"></div></a></div>
                 <div id="m-global-header__tagline">
-                	 <a href="/"><div class="brand">Austin Institute</div> <div>For The Study Of Family & Culture</div> </a></div>
+                	 <a href="<?php echo site_url(); ?>/"><div class="brand">Austin Institute</div> <div>For The Study Of Family & Culture</div> </a></div>
                 
                 <div id="m-global-header__nav">
                     <ul class="menu">
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/research/">Research</a></li>
-                    <li><a href="/research/media/">Media</a></li>
-                    <li><a href="/events/">Events</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/support/" class="donate">Donate</a></li>
+                    <li><a href="<?php echo site_url(); ?>/about/">About</a></li>
+                    <li><a href="<?php echo site_url(); ?>/research/">Research</a></li>
+                    <li><a href="<?php echo site_url(); ?>/research/media/">Media</a></li>
+                    <li><a href="<?php echo site_url(); ?>/events/">Events</a></li>
+                    <li><a href="<?php echo site_url(); ?>/contact/">Contact</a></li>
+                    <li><a href="<?php echo site_url(); ?>/support/" class="donate">Donate</a></li>
                     </ul>
                     
                 </div>
