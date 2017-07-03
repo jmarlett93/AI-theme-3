@@ -46,8 +46,34 @@ $argsm = array(
     'suppress_filters' => true );
 	
 $media_posts = query_posts( $argsm, ARRAY_A );
-if (have_posts()): $i = 0; while(have_posts()) : the_post(); $fieldi = get_field('image_media'); $fieldv = get_field('video_media_cover'); $t = '<li' . ($i > 9 ? ' class="no-mobile"' : '') . '><a href="' . get_the_permalink() . '"><figure class="mediapreview" style="background-image: url(' . (get_field('media_type') == 'image' ? $fieldi['url'] : $fieldv['url']) . ');"></figure></a></li>'; $mediacol .= $t; $i++; endwhile; endif;
+if (have_posts()): $i = 0; while(have_posts()) : the_post(); 
+$fieldi = get_field('image_media'); 
+$fieldv = get_field('video_media_cover'); 
+$t = '<li' . ($i > 9 ? ' class="no-mobile"' : '') . '><a href="'
+ . get_the_permalink() . '"><figure class="mediapreview" style="background-image: url('
+  . (get_field('media_type') == 'image' ? $fieldi['url'] : $fieldv['url']) . ');"></figure></a></li>'; 
+
+$mediacol .= $t; $i++; endwhile; endif;
 wp_reset_query();
+
+$cfmslug = get_category_by_slug('media');
+
+//finish query
+$argsfm = array(
+    'numberposts' => 1,
+   'category__in' => array($cfmslug->term_id),
+   'tag' => 'featured-homepage-media-post'
+);
+
+$featured_media_iframe = '';
+  
+$featured_media_post = query_posts( $argsfm, ARRAY_A );
+
+if(have_posts()): $i = 0; while(have_posts()) : the_post();
+    $featured_media_iframe = get_field('video_embedded_html');
+    $i++;
+    endwhile; endif;
+    wp_reset_query();
 
 $content = <<<AI_HEREDOC_HOME_MAIN
 
@@ -65,9 +91,7 @@ $content = <<<AI_HEREDOC_HOME_MAIN
                 	<div class="mediaBox">
                     	<div class="mediacontainer">
                 		<div class="media">
-                    
-                    	<iframe src="https://www.youtube.com/embed/cO1ifNaNABY?rel=0" frameborder="0" allowfullscreen></iframe>
-                        
+                        $featured_media_iframe
                     	</div>
                        </div>
                     </div>

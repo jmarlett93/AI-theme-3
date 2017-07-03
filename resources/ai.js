@@ -419,6 +419,7 @@ $(document).scroll(function() {
 		});
 	}
 });
+
 $(window).resize(function(){
 	if($("#contentContainer.parallax-cover").length > 0) {
 		$("#contentContainer").css({ minHeight: ($(window).height() - $("#navContainer").height() - $("header").height() - $("footer").height()) + "px" });
