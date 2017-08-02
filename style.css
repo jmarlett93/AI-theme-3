@@ -308,7 +308,7 @@ main {
 	position: relative;
 	width: 100%;
 	padding: 0px;
-	margin: 0px;
+	margin-top: 0px;
 	z-index: 20000; }
 	
 #m-single-main__hero figure {
@@ -749,7 +749,8 @@ img.rounded-75 {
 	background: rgba(0,81,152,0.70);
 	bottom: 6%;
 	color: #fff;
-	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Myriad Pro", "myriad-pro", Myriad, "Liberation Sans", 
+	"Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 600;
 	font-size: 48px;
 	line-height: 48px;
